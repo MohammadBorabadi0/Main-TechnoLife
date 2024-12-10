@@ -100,4 +100,12 @@ export class OrderService {
       throw new Error('Server error occurred while fetching orders');
     }
   }
+
+  // Get My Orders
+  async getMyOrders(userId: string): Promise<Order[]> {
+    return this.orderRepository.find({
+      where: { user: { id: userId } },
+      relations: ['orderItems'],
+    });
+  }
 }
