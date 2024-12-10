@@ -1,0 +1,3 @@
+.swiperButton {
+    @apply flex items-center justify-center bg-white disabled:opacity-50 shadow-3xl rounded-full absolute z-10;
+}
