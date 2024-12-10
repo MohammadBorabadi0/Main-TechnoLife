@@ -1,15 +1,8 @@
-import { Coupon } from '@modules/coupons/entities/coupon.entity';
 import { OrderItem } from '@modules/orders/entities/order-item.entity';
 import { Attribute } from '@modules/product-attributes/entities/product-attributes.entity';
 import { Image } from '@modules/product-images/entities/product-images.entity';
 
-import {
-  Column,
-  Entity,
-  ManyToMany,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('products')
 export class Product {
@@ -44,9 +37,6 @@ export class Product {
     cascade: true,
   })
   attributes: Attribute[];
-
-  @ManyToMany(() => Coupon, (coupon) => coupon.products)
-  coupons: Coupon[];
 
   @OneToMany(() => OrderItem, (orderItem) => orderItem.product)
   orderItems: OrderItem[];

@@ -6,11 +6,9 @@ import {
   OneToMany,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToMany,
 } from 'typeorm';
 import { SubCategory } from './sub-category.entity';
 import { CategoryBrand } from '@modules/brands/entities/category-brand.entity'; // import CategoryBrand
-import { Coupon } from '@modules/coupons/entities/coupon.entity';
 import { Product } from '@modules/products/entities/product.entity';
 
 @Entity('categories')
@@ -41,9 +39,6 @@ export class Category {
 
   @OneToMany(() => Product, (product) => product.category)
   products: Product[];
-
-  @ManyToMany(() => Coupon, (coupon) => coupon.categories)
-  coupons: Coupon[];
 
   @CreateDateColumn()
   createdAt: Date;
