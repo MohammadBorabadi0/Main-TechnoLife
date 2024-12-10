@@ -11,6 +11,7 @@ import { ProductModule } from '@modules/products/products.module';
 import { BrandModule } from '@modules/brands/brands.module';
 import { OrdersModule } from '@modules/orders/orders.module';
 import { DiscountModule } from '@modules/discount/discount.module';
+import { CartModule } from '@modules/cart/cart.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { DiscountModule } from '@modules/discount/discount.module';
     BrandModule,
     OrdersModule,
     DiscountModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
