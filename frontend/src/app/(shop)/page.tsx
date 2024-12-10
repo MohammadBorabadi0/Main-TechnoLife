@@ -5,10 +5,10 @@ import { getProducts } from "@/actions/products";
 import HomeScreen from "@/screens/shop/HomeScreen";
 
 const HomePage = async () => {
-    const { data: products } = await getProducts();
-    const { data: brands } = await getBrands();
-    const { data: categories } = await getCategories();
-    const { data: banners } = await getBanners();
+    const { products } = await getProducts();
+    const { brands } = await getBrands();
+    const { categories } = await getCategories();
+    const { banners } = await getBanners();
 
     return (
         <HomeScreen
