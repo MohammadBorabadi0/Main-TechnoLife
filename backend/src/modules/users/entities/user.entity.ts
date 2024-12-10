@@ -1,3 +1,4 @@
+import { Cart } from '@modules/cart/entities/cart.entity';
 import { Order } from '@modules/orders/entities/order.entity';
 import {
   Entity,
@@ -42,6 +43,9 @@ export class User {
 
   @OneToMany(() => Order, (order) => order.user)
   orders: Order[];
+
+  @OneToMany(() => Cart, (cart) => cart.user)
+  carts: Cart[];
 
   @CreateDateColumn()
   createdAt: Date;
