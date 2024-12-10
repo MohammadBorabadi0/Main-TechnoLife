@@ -1,0 +1,22 @@
+{
+    "name": "nest-next-project",
+    "version": "1.0.0",
+    "scripts": {
+        "server": "yarn --cwd backend start:dev",
+        "client": "yarn --cwd frontend dev",
+        "dev": "concurrently \"yarn client\" \"yarn server\"",
+        "prepare": "husky install"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@commitlint/cli": "^19.6.0",
+        "@commitlint/config-conventional": "^19.6.0",
+        "concurrently": "^9.1.0",
+        "husky": "^8.0.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.2"
+    },
+    "commitlint": {
+        "config": "./commitlint.config.ts"
+    }
+}
